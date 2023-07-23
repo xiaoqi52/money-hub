@@ -1,0 +1,20 @@
+package ${packageName}.service;
+
+import java.util.List;
+import ${packageName}.domain.${ClassName};
+
+public interface I${ClassName}Service 
+{
+
+    public ${ClassName} select${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
+
+    public List<${ClassName}> select${ClassName}List(${ClassName} ${className});
+
+    public int insert${ClassName}(${ClassName} ${className});
+
+    public int update${ClassName}(${ClassName} ${className});
+
+    public int delete${ClassName}By${pkColumn.capJavaField}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
+
+    public int delete${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
+}

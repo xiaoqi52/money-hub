@@ -1,0 +1,34 @@
+package ${packageName}.mapper;
+
+import java.util.List;
+import ${packageName}.domain.${ClassName};
+#if($table.sub)
+import ${packageName}.domain.${subClassName};
+#end
+
+public interface ${ClassName}Mapper 
+{
+
+    public ${ClassName} select${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
+
+
+    public List<${ClassName}> select${ClassName}List(${ClassName} ${className});
+
+    public int insert${ClassName}(${ClassName} ${className});
+
+    public int update${ClassName}(${ClassName} ${className});
+
+    public int delete${ClassName}By${pkColumn.capJavaField}(${pkColumn.javaType} ${pkColumn.javaField});
+
+    public int delete${ClassName}By${pkColumn.capJavaField}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
+#if($table.sub)
+
+    public int delete${subClassName}By${subTableFkClassName}s(${pkColumn.javaType}[] ${pkColumn.javaField}s);
+    
+
+    public int batch${subClassName}(List<${subClassName}> ${subclassName}List);
+    
+
+    public int delete${subClassName}By${subTableFkClassName}(${pkColumn.javaType} ${pkColumn.javaField});
+#end
+}
